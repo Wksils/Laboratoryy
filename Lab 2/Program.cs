@@ -1,4 +1,4 @@
-﻿//разветвляющиеся алгоритмы
+//разветвляющиеся алгоритмы
 
 
 //логические выражения
@@ -14,8 +14,8 @@ double y = double.Parse(Console.ReadLine());
 double r = 1;
 
 bool circle = x * x + y * y <= r;
-bool side = x * y > 0;
-bool area = y <= x;
+bool side = x * y < 0;
+bool area = y + x > 0;
 
 if (circle && side && area) { Console.WriteLine("Принадлежит"); }
 else { Console.WriteLine("Не принадлежит"); }
