@@ -139,3 +139,40 @@ switch (stars)
     default: Console.WriteLine("неверно введены параметры"); break;
 }
 Console.WriteLine($"Стоимость проживания : {price}");
+
+//средний уровень
+//вариант 9
+Console.WriteLine();
+Console.WriteLine("ЗАДАНИЕ 3.1");
+
+Console.WriteLine("выберите вариант: ");
+Console.WriteLine("1. a=1.2; b=7.2; z=e^x");
+Console.WriteLine("2. a=-1.5; b=3.2; z=e^2x");
+Console.WriteLine("2. a=1.7; b=5.5; z=e^3");
+byte num = byte.Parse(Console.ReadLine());
+double a = 0;
+double b = 0;
+double z = 0;
+double result = 0;
+Console.WriteLine("Введите x");
+double xx = double.Parse(Console.ReadLine());
+
+switch (num)
+{
+    case 1: a = 1.2; b = 7.2; z = Math.Pow(Math.E, xx); break;
+    case 2: a = -1.5; b = 3.2; z = Math.Pow(Math.E, 2 * xx); break;
+    case 3: a = 1.7; b = 5.5; z = Math.Pow(Math.E, 3); break;
+}
+if (xx < Math.Pow(a, 3))
+{
+    result = a * Math.Pow(Math.Sin(x), 2) + b * Math.Cos(z * x + a);
+}
+if (Math.Pow(a, 3) <= x && x <= b)
+{
+    result = Math.Pow(a + b * x, 2) - Math.Sin(a + z * x);
+}
+if (x > b)
+{
+    result = Math.Sqrt(x - (Math.Sin(b * x + z)));
+}
+Console.WriteLine($"y = {result}");
