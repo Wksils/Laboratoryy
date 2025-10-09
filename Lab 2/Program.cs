@@ -148,7 +148,7 @@ Console.WriteLine("ЗАДАНИЕ 3.1");
 Console.WriteLine("выберите вариант: ");
 Console.WriteLine("1. a=1.2; b=7.2; z=e^x");
 Console.WriteLine("2. a=-1.5; b=3.2; z=e^2x");
-Console.WriteLine("2. a=1.7; b=5.5; z=e^3");
+Console.WriteLine("3. a=1.7; b=5.5; z=e^3");
 byte num = byte.Parse(Console.ReadLine());
 double a = 0;
 double b = 0;
@@ -162,7 +162,7 @@ switch (num)
     case 1: a = 1.2; b = 7.2; z = Math.Pow(Math.E, xx); break;
     case 2: a = -1.5; b = 3.2; z = Math.Pow(Math.E, 2 * xx); break;
     case 3: a = 1.7; b = 5.5; z = Math.Pow(Math.E, 3); break;
-    default: Console.WriteLine("несуществующий вариант!"); break;
+    default: Console.WriteLine("несуществующий вариант! Y будет некорректным!"); break;
 }
 if (xx < Math.Pow(a, 3))
 {
