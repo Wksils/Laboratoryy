@@ -1,6 +1,8 @@
 ﻿//Операторы цикла с предусловием и постусловием
 //вариант 9
 //высокий уровень
+using System.Runtime.Serialization.Formatters;
+
 Console.WriteLine("Введите последовательность чисел. 0 - завершение последовательности");
 double a = 1;
 do
@@ -17,7 +19,7 @@ Console.WriteLine($"Произведение чисел : {a}");
 //средний уровень
 Console.WriteLine("введите предел");
 int k = int.Parse(Console.ReadLine());
-while(k == 0 || double.IsInfinity(k))
+while (k == 0 || double.IsInfinity(k))
 {
     Console.WriteLine("некорректное значение: ");
     Console.WriteLine("введите предел: ");
@@ -34,3 +36,41 @@ for (int i = 1; i < k; i++)
     W += (double)(Math.Pow(-1, i) * (i - 3) * (i - 3) / F);
 }
 Console.WriteLine($"W = {W:f2}");
+
+//вычисление бесконечных сумм
+//вариант 9
+Console.WriteLine("введите n :");
+int n = int.Parse(Console.ReadLine());
+Console.WriteLine("введите X :");
+int x = int.Parse(Console.ReadLine());
+double Sum = 0;
+long Ff = 1;
+for (int i = 1; i <= n; i += 4)
+{
+    for (int j = 1; j <= i; j++)
+    {
+        Ff *= j;
+    }
+    Sum += (Math.Pow(x, i) / Ff);
+}
+Console.WriteLine($"Сумма = {Sum:f2}");
+
+//табулирование фкнкций 
+//вариант 9
+//высокий уровень
+long F1 = 1;
+double f = 0;
+int k1 = 1;
+Console.WriteLine("-----------------------------");
+Console.WriteLine("|     x       |       y     |");
+Console.WriteLine("-----------------------------");
+for (double x1 = 0.5; x1 <= 2; x1 += 0.15)
+{
+    for (int j = 1; j <= k1; j++)
+    {
+        F1 *= j;
+    }
+    f += (Math.Pow(-3, k1) * Math.Pow(x1, k1) / F1);
+    Console.WriteLine($"|{x1,9:f2} {" ", -3}|{f,12:f6}{" "}|");
+    k1++;
+}
