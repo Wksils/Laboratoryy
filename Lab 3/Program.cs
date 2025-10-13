@@ -2,7 +2,7 @@
 //вариант 9
 //высокий уровень
 using System.Runtime.Serialization.Formatters;
-
+Console.WriteLine("ЗАДАНИЕ 3.1");
 Console.WriteLine("Введите последовательность чисел. 0 - завершение последовательности");
 double a = 1;
 do
@@ -17,6 +17,7 @@ Console.WriteLine($"Произведение чисел : {a}");
 //Оператор цикла for
 //вариант 9
 //средний уровень
+Console.WriteLine("ЗАДАНИЕ 3.2");
 Console.WriteLine("введите предел");
 int k = int.Parse(Console.ReadLine());
 while (k == 0 || double.IsInfinity(k))
@@ -39,6 +40,7 @@ Console.WriteLine($"W = {W:f2}");
 
 //вычисление бесконечных сумм
 //вариант 9
+Console.WriteLine("ЗАДАНИЕ 3.3");
 Console.WriteLine("введите n :");
 int n = int.Parse(Console.ReadLine());
 Console.WriteLine("введите X :");
@@ -58,6 +60,7 @@ Console.WriteLine($"Сумма = {Sum:f2}");
 //табулирование фкнкций 
 //вариант 9
 //высокий уровень
+Console.WriteLine("ЗАДАНИЕ 3.4");
 long F1 = 1;
 double f = 0;
 int k1 = 1;
@@ -74,3 +77,4 @@ for (double x1 = 0.5; x1 <= 2; x1 += 0.15)
     Console.WriteLine($"|{x1,9:f2} {" ", -3}|{f,12:f6}{" "}|");
     k1++;
 }
+Console.WriteLine("-----------------------------");
