@@ -3,29 +3,31 @@
 //одномерные массивы
 //вариант 15
 //высокий уровень
-Console.Write("задайте размерность массива: ");
-int a = 0;
-do
-{
-    a = int.Parse(Console.ReadLine());
-}
-while (a == 0);
+Random rnd = new Random();
+int a = rnd.Next(1, 10);
 
 int[] numbers = new int[a];
 int sum = 0;
-Console.WriteLine("Введите элементы массива в двоичной сс: ");
 for(int i = 0; i < numbers.Length; i++)
 {
-    string s = Console.ReadLine();
-    numbers[i] = Convert.ToInt32(s, 2);
+    numbers[i] = rnd.Next(100);
     sum += numbers[i];
 }
 double av = sum / numbers.Length;
 Console.WriteLine($"среднее значение чисел: {av}");
 Array.Sort(numbers);
-foreach(int i in numbers)
+string[] dv = new string[numbers.Length];
+for(int i = 0;i < numbers.Length; i++)
+{
+    dv[i] = Convert.ToString(numbers[i], 2);
+}
+Console.WriteLine();
+Console.WriteLine("Содержимое массива в двоичной сс:");
+foreach(string i in dv)
 {
     Console.Write(i + " ");
 }
+Console.WriteLine();
+
 
 
