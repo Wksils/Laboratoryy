@@ -20,10 +20,10 @@ Console.WriteLine($"Произведение чисел : {a}");
 Console.WriteLine("ЗАДАНИЕ 3.2");
 Console.WriteLine("введите предел");
 int k = int.Parse(Console.ReadLine());
-while (k == 0 || double.IsInfinity(k))
+while (k == 0)
 {
-    Console.WriteLine("некорректное значение: ");
-    Console.WriteLine("введите предел: ");
+    Console.WriteLine("некорректное значение");
+    Console.Write("введите предел: ");
     k = int.Parse(Console.ReadLine());
 }
 double W = 0;
