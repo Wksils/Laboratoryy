@@ -28,11 +28,11 @@ namespace Library1
 
         public static double G(double[] mas)
         {
-            double result = 1;
             double realResult = 0;
             for(int i = 1; i < 7; i++)
             {
-                for(int j = 1; j < i; j++)
+                double result = 1;
+                for (int j = 1; j < i; j++)
                 {
                     result *= mas[j] / Math.E;
                 }
