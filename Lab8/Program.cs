@@ -15,7 +15,7 @@ for (int i = 0; i < quantity; i++)
     Console.Write("Введите год выпуска автомобиля: ");
     car[i].year = new DateTime(int.Parse(Console.ReadLine()!),1,1);
     Console.Write("Введите дату регистрации автомобиля: ");
-    car[i].regestration = DateTime.Parse(Console.ReadLine()!);
+    car[i].registration = DateTime.Parse(Console.ReadLine()!);
     Console.WriteLine();
 }
 foreach (Car i in car)
@@ -31,7 +31,7 @@ struct Car
     public string manufacturer;
     public string type;
     public DateTime year;
-    public DateTime regestration;
+    public DateTime registration;
 
-    public override string? ToString() => $"Mark:{mark}, Manufacturer:{manufacturer}, Type:{type}, Year:{year.Year}, Date:{regestration}";
+    public override string? ToString() => $"Mark:{mark}, Manufacturer:{manufacturer}, Type:{type}, Year:{year.Year}, Date:{registration:d}";
 }
