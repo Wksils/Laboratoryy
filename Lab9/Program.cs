@@ -14,13 +14,16 @@ Console.WriteLine("Введите y2:");
 double y2 = double.Parse(Console.ReadLine()!);
 Rectangle rectangle = new Rectangle(x1, y1, x2, y2);
 Console.WriteLine($"{rectangle.Diagonal():f2}");
+Console.WriteLine("Введите радиус окружности:");
+Circle circle = new Circle(double.Parse(Console.ReadLine()!));
+Console.WriteLine($"{circle.AreaCircleRect():f2}");
 
 public class Rectangle
 {
-    private double x1;
-    private double y1;
-    private double x2;
-    private double y2;
+    protected double x1;
+    protected double y1;
+    protected double x2;
+    protected double y2;
 
 
     public double X1 { get => x1; set => x1 = value; }
@@ -49,4 +52,29 @@ public class Rectangle
         return Math.Sqrt(Math.Pow(Math.Abs(x2 - x1), 2) + Math.Pow(Math.Abs(y2 - y1), 2));
     }
     
+}
+
+//наследование
+//средний уровень
+
+public class Circle : Rectangle
+{
+    private double r;
+    public Circle(double _r)
+    {
+        this.r = _r;
+    }
+    public double R 
+    {
+        get => r;
+        set { if (r < Math.Abs(x2 - x1) && r < Math.Abs(y2 - y1)) r = value; }
+    }
+    public double AreaCircleRect()
+    {
+        double CircleArea = 2 * Math.PI * r * r;
+        Console.WriteLine(CircleArea);
+        double RectangleArea = Math.Abs(x2 - x1) * Math.Abs(y2 - y1);
+        Console.WriteLine(RectangleArea);
+        return RectangleArea - CircleArea;
+    }
 }
