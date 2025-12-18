@@ -4,6 +4,16 @@
 
 using System.Xml.Linq;
 
+Console.Write("Введите название алмаза: ");
+string name = Console.ReadLine()!;
+Console.Write("Введите вес: ");
+double ves = double.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите качество огранки: ");
+int cut = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите цвет: ");
+string color = Console.ReadLine()!;
+
+
 class Dimond
 {
     private string? name;
