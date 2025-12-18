@@ -15,7 +15,7 @@ double y2 = double.Parse(Console.ReadLine()!);
 Rectangle rectangle = new Rectangle(x1, y1, x2, y2);
 Console.WriteLine($"{rectangle.Diagonal():f2}");
 Console.WriteLine("Введите радиус окружности:");
-Circle circle = new Circle(double.Parse(Console.ReadLine()!));
+Circle circle = new Circle(double.Parse(Console.ReadLine()!), rectangle);
 Console.WriteLine($"{circle.AreaCircleRect():f2}");
 
 public class Rectangle
@@ -60,20 +60,22 @@ public class Rectangle
 public class Circle : Rectangle
 {
     private double r;
-    public Circle(double _r)
+    private Rectangle rect;
+    public Circle(double _r, Rectangle _rect)
     {
-        this.r = _r;
+        if (_r < Math.Abs(rect.X2 - rect.X1) / 2 && _r < Math.Abs(rect.Y2 - rect.Y1) / 2) this.r = _r;
+        this.rect = _rect;
     }
     public double R 
     {
         get => r;
-        set { if (r < Math.Abs(x2 - x1) && r < Math.Abs(y2 - y1)) r = value; }
+        set { if (value < Math.Abs(rect.X2 - rect.X1)/2 && value < Math.Abs(rect.Y2 - rect.Y1)/2) r = value; }
     }
     public double AreaCircleRect()
     {
-        double CircleArea = 2 * Math.PI * r * r;
+        double CircleArea = Math.PI * r * r;
         Console.WriteLine(CircleArea);
-        double RectangleArea = Math.Abs(x2 - x1) * Math.Abs(y2 - y1);
+        double RectangleArea = Math.Abs(rect.X2 - rect.X1) * Math.Abs(rect.Y2 - rect.Y1);
         Console.WriteLine(RectangleArea);
         return RectangleArea - CircleArea;
     }
